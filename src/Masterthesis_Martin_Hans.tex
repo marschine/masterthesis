@@ -1,0 +1,38 @@
+\input{0_header}
+\input{0_titlePage}
+
+
+\begin{document}
+\maketitle													
+% Titelseite hier anlegen	
+\pagenumbering{roman}								
+% Nummerierung von Inhaltsangabe mit römischen Zahlen
+
+%\input{0_memberPage}
+%\input{0_authorPage}
+%\input{0_abstract}									
+
+
+\tableofcontents									
+% Inhaltsangabe erzeugen
+
+\listoffigures
+%\lstlistoflistings										
+% Quellcodeverzeichnis einfuegen
+%\listoftables
+
+\newpage
+\pagenumbering{arabic}										% Hauptteil mit numerischer Seitennummerierung
+\setcounter{page}{1}										% Zählung beginnt bei 1
+
+% input your chapters here
+\input{0_introduction}
+%\input{1_Architecture}
+
+%\input{2_Installation}
+%\input{3_Development}
+%\input{4_UserManual}						
+%\input{5_Prospects}	
+%\input{6_Appendix}	
+
+\end{document}    

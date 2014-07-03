@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman, english]{babel}
+
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}					
+% chapter, URLS are hyperreferenced
+%\usepackage{makeidx}
+\usepackage{rotfloat} 
+\usepackage{nomencl}
+\makenomenclature
+
+\usepackage{fancyhdr} 					
+% for headings
+\pagestyle{fancy}
+\fancyhf{} 						% clear all foot and headers
+
+\fancyhead[L]{\footnotesize{\leftmark}}			
+% foot notes on the left
+\fancyfoot[C]{\thepage} 				% page numbering
+
+\usepackage{listings} 					% for programming code
+\usepackage{color}					% colors in programming code
+
+\usepackage{cite}					% for quoting
+\usepackage[right]{eurosym}
+
+
+%\renewcommand{\baselinestretch}{1.25}\normalsize 	% line distance
+
+\setcounter{secnumdepth}{2}				% subsubsection also gets a number
+\setcounter{tocdepth}{3}				% Configure enumeration depth of sections
+
+
+\newcommand{\insrtFigure}[4]{
+\begin{figure}[htp]
+\centering
+\includegraphics[width=#4\linewidth]{../img/#1/#2}
+\caption{#3}
+\label{fig:#1_#2}
+\end{figure}}
+
+\newcommand{\insrtFigures}[9]{
+\begin{figure}[htp]
+#9
+	\centering
+	\begin{subfigure}[h]{#4\textwidth}
+		\includegraphics[width=\textwidth]{../img/#1/#2}
+	    \caption{#3}
+	    \label{fig:#1_#2}
+	\end{subfigure}%
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+	  %(or a blank line to force the subfigure onto a new line)
+	\qquad
+	\begin{subfigure}[h]{#4\textwidth}
+	    \vspace*{0.475cm}
+	    \includegraphics[width=\textwidth]{../img/#1/#5}
+	    \caption{#6}
+	    \label{fig:#1_#5}
+	\end{subfigure}
+		\caption[#7]{#8}
+		\label{fig:#1#2and5}
+\end{figure}
+}
